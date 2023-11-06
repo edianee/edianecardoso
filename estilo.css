@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  background-color: #ffffff;
+  background-image: url(/Portifolio_OF/background.png);
+  background-attachment: fixed;
+  background-size: cover;
+
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header header header"
+    "section1 section2 section2"
+    "projetos projetos projetos"
+    "mensagem mensagem mensagem"
+    "footer footer footer ";
+
+  height: 100vh;
+  width: 100vw;
+}
+
+/* SESSÃO HEADER */
+header.scrolled {
+  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  padding: 1.43em;
+  max-width: 1300px;
+  width: 1300px;
+  font-size: 1.5em;
+  font-weight: bold;
+  grid-area: header;
+  transition: background-color 0.3s ease-in-out;
+}
+
+header ul {
+  list-style: none;
+  margin-left: 0.7em;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+header ul li a::after {
+  content: " ";
+  width: 0%;
+  height: 4px;
+  background-color: rgba(79, 63, 63, 0.541);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transition: 0.5s ease-in-out; /* Efeito da borda vermelha */
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+header ul li a:hover {
+  color: #505c5b;
+}
+#container-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+/* SESSÃO FOTO PERFIL  */
+#section1 {
+  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+  grid-area: section1;
+  height: auto;
+
+  margin-top: 5em;
+  padding-top: 9rem;
+}
+#section1 img {
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.281) 4px 5px 8px 7px;
+  width: 50%;
+  margin-left: 25%;
+}
+.container-img-texto ul li {
+  list-style: none;
+  padding: 10px;
+}
+.container-img-texto {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.bio-perfil {
+  text-align: center;
+  padding-left: 0;
+}
+.formatacao-texto {
+  text-shadow: rgba(43, 72, 106, 0.635) 3px 3px 3px;
+  font-size: 1.6rem;
+}
+.sociais {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  gap: 40px;
+}
+.sociais a {
+  color: white;
+  transition: 0.5s;
+}
+.sociais a:hover {
+  transition: 0.5s;
+}
+.linkedin a:hover {
+  color: #0a66c2;
+  transform: scale(2.5); /* Efeito para aumentar*/
+  display: block; /* transform só funciona com display block */
+}
+.zap a:hover {
+  color: #0dc143;
+  transform: scale(2.5);
+  display: block;
+}
+.insta a:hover {
+  color: #f301b9;
+  transform: scale(2.5);
+  display: block;
+}
+/*footer sociais */
+
+.sociais_footer {
+  list-style: none;
+}
+.sociais_footer .zap a {
+  color: #0dc143;
+}
+.sociais_footer .insta a {
+  color: #f301b9;
+}
+.sociais_footer .linkedin a {
+  color: #0a66c2;
+}
+/* SESSÃO TEXTO SOBRE MIM  */
+#section2 {
+  margin-top: 5em;
+  padding-top: 8rem;
+  grid-area: section2;
+  background: linear-gradient(45deg, rgba(191, 13, 141, 0.544), white);
+}
+#section2 h1 {
+  padding: 0 0 0 40px;
+}
+#section2 h3 {
+  color: rgb(34, 32, 32);
+  font-family: arial, verdana;
+  letter-spacing: 0.5px;
+  word-spacing: 5px;
+  text-indent: 50px;
+  padding: 0 20px 0 40px;
+  font-size: 1.5rem;
+}
+/* SESSÃO 2 - PARTE DE SLIDES  */
+.content {
+  height: 520px;
+  width: 860px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* position: absolute;  */
+}
+.navegacao {
+  position: absolute;
+  /* top: 60%;    por algum movito da conflito no github esse formato 
+  left: 50%; */
+  display: flex;
+  top: 75%;
+  left: 55%;
+}
+.bar {
+  width: 100px;
+  height: 17px;
+  margin: 6px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bar:hover {
+  box-shadow: #fff 2px 2px 2px 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.content input {
+  display: none;
+}
+.slides {
+  display: flex;
+  width: 500%;
+  height: 100%;
+}
+.slide {
+  width: 33.3%;
+  transition: 0.6s;
+}
+.slide img {
+  width: 60%;
+  height: 100%;
+}
+#slide1:checked ~ .s1 {
+  margin-left: 0;
+}
+#slide2:checked ~ .s1 {
+  margin-left: -33.3%;
+}
+#slide3:checked ~ .s1 {
+  margin-left: -66.6%;
+}
+/* SESSÃO PROJETOS */
+
+#projetos {
+  padding-top: 10rem;
+  grid-area: projetos;
+  height: 100vh;
+}
+.container-projetos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: space-evenly;
+}
+.row {
+  /* background: linear-gradient(45deg, rgba(43, 72, 106, 0.486), white); */
+  margin-top: 10px;
+  align-items: center;
+  width: 420px; /* 420 */
+  height: 420px;
+  overflow: hidden;
+}
+.row img {
+  width: 100%;
+  height: 100%;
+  transition: 0.4s all ease-in-out;
+  overflow: hidden;
+}
+.row img:hover {
+  cursor: pointer;
+  transform: scale(1.4) rotate(5deg);
+}
+.f1 img:hover {
+  cursor: pointer;
+  transform: scale(1.4) rotate(-5deg);
+}
+/*SESSÇÃO CONTAINER MENSAGEM  */
+#mensagem {
+  grid-area: mensagem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  margin-top: 55rem;
+  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+}
+#mensagem h1,
+#projetos h1 {
+  text-align: center;
+  line-height: 25rem;
+  margin: 0 auto;
+
+  width: 100%;
+  height: 50%;
+}
+.efeitoScrollReveal,
+.efeitoScrollReveal_Efeito2 {
+  visibility: hidden; /* deixa invisivel, ajuda no efeito Revael, mas não é obrigatorio */
+}
+
+footer {
+  max-width: 1500px;
+  grid-area: footer;
+  background: black;
+}
+#footer-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-item1 {
+  color: white;
+}
+
+/* Media Queres */
+@media (min-width: 200px) and (max-width: 767.98px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "header header header"
+      "section1 section1 section1"
+      "projetos projetos projetos"
+      "mensagem mensagem mensagem"
+      "footer footer footer ";
+  }
+  header {
+    display: none;
+  }
+  #section1 {
+    margin-top: 0;
+    padding: 0;
+    height: 50rem;
+  }
+  #section1 img {
+    margin-top: 2rem;
+  }
+  .container-img-texto {
+    margin: 0;
+  }
+  .bio-perfil {
+    margin: -15px 0 0 -10px;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+  .formatacao-texto {
+    font-size: 1.5rem;
+  }
+  .sociais {
+    padding: 0;
+  }
+  .sociais li {
+    margin: 0 auto;
+  }
+  .linkedin a {
+    color: #15497d;
+  }
+  .zap a {
+    color: #10cf4a;
+  }
+  .insta a {
+    color: #f301b9;
+  }
+  #section2 {
+    display: none;
+  }
+  /* QUERES DE PROJETOS  */
+  #projetos {
+    height: 105rem;
+    padding: 5px;
+  }
+
+  /* QUERES DE MENSAGEM */
+  #mensagem {
+    padding: 0;
+    margin-top: 80rem;
+  }
+  #mensagem h1 {
+    line-height: 5rem;
+    height: 150px;
+  }
+  /* QUERES DE FOOTER */
+  #footer {
+    height: 30vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "header header header"
+      "section1 section1 section1"
+      "projetos projetos projetos"
+      "mensagem mensagem mensagem"
+      "footer footer footer ";
+  }
+  header {
+    display: none;
+  }
+  #container-menu {
+    display: none;
+  }
+  #section1 {
+    margin-top: 0;
+    padding: 0;
+    height: 52rem;
+  }
+  #section1 img {
+    margin-top: 2rem;
+    width: 250px;
+    margin: 2rem 0 0 18rem;
+  }
+  .sociais {
+    padding: 0;
+  }
+  .sociais li {
+    margin: 0 auto;
+  }
+  #section2 {
+    display: none;
+  }
+  /* QUERES DE PROJETOS  */
+  #projetos {
+    height: 105rem;
+    padding: 5px;
+  }
+
+  /* QUERES DE MENSAGEM */
+  #mensagem {
+    padding: 0;
+    margin-top: 80rem;
+  }
+  #mensagem h1 {
+    line-height: 5rem;
+    height: 150px;
+  }
+  /* QUERES DE FOOTER */
+  #footer {
+    margin-top: 10px;
+    padding: 0;
+    font-size: 1.5rem;
+    height: 25vh;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+@media (min-width: 1200px) {
+}
