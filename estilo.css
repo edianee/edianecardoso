@@ -31,7 +31,7 @@ body {
 
 /* SESSÃO HEADER */
 header.scrolled {
-  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+  background: linear-gradient(920deg, rgb(253, 188, 180), white);
 }
 
 header {
@@ -56,7 +56,7 @@ header ul {
 header ul li a {
   position: relative;
   text-decoration: none;
-  color: #333;
+  color: white;
 }
 
 header ul li a::after {
@@ -84,7 +84,8 @@ header ul li a:hover {
 
 /* SESSÃO FOTO PERFIL  */
 #section1 {
-  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+  background: linear-gradient(85deg,#fdbcb4, white);
+ /* rgba(253, 188, 180)  */
   grid-area: section1;
   height: auto;
 
@@ -161,7 +162,7 @@ header ul li a:hover {
   margin-top: 5em;
   padding-top: 8rem;
   grid-area: section2;
-  background: linear-gradient(45deg, rgba(191, 13, 141, 0.544), white);
+  background: linear-gradient(45deg, rgb(253, 188, 180), white);
 }
 #section2 h1 {
   padding: 0 0 0 40px;
@@ -274,7 +275,7 @@ header ul li a:hover {
   align-items: center;
   padding-top: 6rem;
   margin-top: 55rem;
-  background: linear-gradient(45deg, rgba(191, 13, 140, 0.911), white);
+  background: linear-gradient(45deg, rgb(253, 188, 180), white);
 }
 #mensagem h1,
 #projetos h1 {
